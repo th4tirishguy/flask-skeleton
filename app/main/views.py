@@ -19,6 +19,7 @@ def index():
     form = LoginForm()
 
     if request.method == 'POST' and form.validate_on_submit():
+        print(form.data)
         return 'Success'
     else:
-        return 'Home page'
+        return render_template('main/index.html', form=form)
